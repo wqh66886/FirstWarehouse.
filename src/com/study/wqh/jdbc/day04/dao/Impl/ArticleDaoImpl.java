@@ -3,8 +3,10 @@ package com.study.wqh.jdbc.day04.dao.Impl;
 import com.study.wqh.jdbc.day04.dao.IArticleDao;
 import com.study.wqh.jdbc.day04.entity.Article;
 import com.study.wqh.jdbc.util.JDBCUtils;
+import com.study.wqh.jdbc.util.template.IPreparedStatementCallback;
+import com.study.wqh.jdbc.util.template.JdbcTamplate;
 
-import javax.tools.JavaCompiler;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.*;
@@ -149,11 +151,13 @@ public class ArticleDaoImpl implements IArticleDao {
 
         ResultSet rs = null;
 
-        conn = JDBCUtils.getConnection();
+
 
         String sql = "select * from article where id = ?";
 
         try {
+            conn = JDBCUtils.getConnection();
+
             pst = conn.prepareStatement(sql);
 
             pst.setInt(1,id);
@@ -172,5 +176,51 @@ public class ArticleDaoImpl implements IArticleDao {
             e.printStackTrace();
         }
         return article;
+    }
+
+    @Override
+    public int delById(Integer id) {
+        Connection conn = null;
+
+        PreparedStatement pst = null;
+
+        String sql = "delete from article where id = ?";
+
+        int row = 0;
+
+        try {
+            conn = JDBCUtils.getConnection();
+
+            pst = conn.prepareStatement(sql);
+
+            pst.setInt(1,id);
+
+            row = pst.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally {
+            JDBCUtils.CloseResource(conn,pst);
+        }
+        return row;
+    }
+
+    @Override
+    public void removeById(Integer id) {
+//        JdbcTamplate.executeDML(new IPreparedStatementCallback() {
+//            @Override
+//            public PreparedStatement executeSQL(Connection conn) throws SQLException {
+//                String sql = "delete from article where id = ?";
+//                PreparedStatement pst = conn.prepareStatement(sql);
+//                pst.setInt(1,id);
+//                return pst;
+//            }
+//        });
+        JdbcTamplate.executeDML(conn -> {
+            String sql = "delete from article where id = ?";
+            PreparedStatement pst = conn.prepareStatement(sql);
+            pst.setInt(1,id);
+            return pst;
+        });
     }
 }

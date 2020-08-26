@@ -35,4 +35,19 @@ public class ArticleDaoImplTest {
         Article article = articleDao.getById(2);
         System.out.println(article);
     }
+
+    @Test
+    public void TestDelById(){
+        int row = articleDao.delById(8);
+        if(row > 0){
+            System.out.println("删除成功!");
+        }else{
+            System.out.println("删除失败!");
+        }
+    }
+
+    @Test
+    public void TestRemoveById(){
+        articleDao.removeById(7);
+    }
 }

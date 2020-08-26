@@ -18,29 +18,18 @@ public class JDBCUtils {
      * 获取数据库连接
      * @return
      */
-    public static Connection getConnection(){
-        InputStream in = JDBCUtils.class.getClassLoader().getResourceAsStream("jdbc.properties");
-        Properties properties = new Properties();
+    public static Connection getConnection() throws SQLException{
+
 
         Connection conn = null;
-        try {
-            properties.load(in);
-            String driver = properties.getProperty("driver");
-            String url = properties.getProperty("url");
-            String user = properties.getProperty("user");
-            String password =  properties.getProperty("password");
 
-            Class.forName(driver);
+        String driver = ConfigUtil.getValue("driver");
+        String url = ConfigUtil.getValue("url");
+        String user = ConfigUtil.getValue("user");
+        String password =  ConfigUtil.getValue("password");
 
-            conn = DriverManager.getConnection(url,user,password);
+        conn = DriverManager.getConnection(url,user,password);
 
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
         return conn;
     }
 

@@ -30,4 +30,8 @@ public interface IArticleDao {
      * @return
      */
     Article getById(Integer id);
+
+    int delById(Integer id);
+
+    void removeById(Integer id);
 }
