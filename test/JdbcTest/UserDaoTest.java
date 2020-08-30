@@ -7,6 +7,8 @@ import com.study.wqh.jdbc.day04.entity.StatusEnum;
 import com.study.wqh.jdbc.day04.entity.User;
 import org.junit.Test;
 
+import java.util.List;
+
 /**
  * @author: 王其浩
  * @ClassName: UserDaoTest
@@ -29,12 +31,19 @@ public class UserDaoTest {
 //        user.setStatus(StatusEnum.USER);
 
         User user = userDao.getById(3);
-        if(null != user){
-            user.setUsername("汤姆.斯坦福");
-        user.setStatus(StatusEnum.USER);
-        }
-
-        userDao.updata(user);
+//        if(null != user){
+//            user.setUsername("汤姆.斯坦福");
+//        user.setStatus(StatusEnum.USER);
+//        }
+//
+//        userDao.updata(user);
         System.out.println(user);
+    }
+
+
+    @Test
+    public void testFindAll(){
+        List<User> users = userDao.findAll();
+        users.forEach(e-> System.out.println(e));
     }
 }

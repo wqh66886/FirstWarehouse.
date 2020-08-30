@@ -1,11 +1,12 @@
 package com.study.wqh.jdbc.util.template;
 
 import com.study.wqh.jdbc.util.JDBCUtils;
-import com.sun.xml.internal.ws.org.objectweb.asm.ClassAdapter;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 
 /**
  * @author: 王其浩
@@ -14,6 +15,7 @@ import java.sql.SQLException;
  * @Date 2020/8/26
  * @version:
  */
+@SuppressWarnings("all")
 public class JdbcTamplate {
 
     /**
@@ -37,6 +39,96 @@ public class JdbcTamplate {
         }finally {
             JDBCUtils.CloseResource(conn,pst);
         }
+    }
+
+    /**
+     * 封装DQL
+     * @param pcb
+     * @param rcb
+     */
+//    public static Object executeDQL(IPreparedStatementCallback pcb,IResultSetCallBack rcb){
+//        Connection conn = null;
+//        PreparedStatement pst = null;
+//        ResultSet rs = null;
+//        Object obj = null;
+//        //1.获取连接
+//        try {
+//            conn = JDBCUtils.getConnection();
+//
+//            //发送参数
+//            pst = pcb.executeSQL(conn);
+//
+//            rs = pst.executeQuery();
+//
+//            obj = rcb.handler(rs);
+//
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//        }finally {
+//            JDBCUtils.CloseResourse(conn,pst,rs );
+//        }
+//        return obj;
+//    }
+
+    /**
+     * 使用泛型 返回单个结果
+     * @param pcb
+     * @param rcb
+     * @return
+     */
+    public static <T> T executeDQL(IPreparedStatementCallback pcb,IResultSetCallA<T> rcb){
+        Connection conn = null;
+        PreparedStatement pst = null;
+        ResultSet rs = null;
+        T obj = null;
+        //1.获取连接
+        try {
+            conn = JDBCUtils.getConnection();
+
+            //发送参数
+            pst = pcb.executeSQL(conn);
+
+            rs = pst.executeQuery();
+
+            obj = rcb.handler(rs);
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally {
+            JDBCUtils.CloseResourse(conn,pst,rs );
+        }
+        return obj;
+    }
+
+    /**
+     * 使用泛型-返回多个结果
+     * @param pcb
+     * @param rcb
+     * @param <T>
+     * @return
+     */
+    public static <T> List<T> executeMore(IPreparedStatementCallback pcb, IResultSetCallB<T> rcb){
+        Connection conn = null;
+        PreparedStatement pst = null;
+        ResultSet rs = null;
+        List<T> obj = null;
+        //1.获取连接
+        try {
+            conn = JDBCUtils.getConnection();
+
+            //发送参数
+            pst = pcb.executeSQL(conn);
+
+            rs = pst.executeQuery();
+
+            obj = rcb.handler(rs);
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally {
+            JDBCUtils.CloseResourse(conn,pst,rs );
+        }
+        return obj;
     }
 
     /**

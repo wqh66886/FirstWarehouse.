@@ -10,6 +10,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -20,24 +21,48 @@ import java.util.List;
  * @Date 2020/8/30
  * @version:
  */
+@SuppressWarnings("all")
 public class UserDaoImpl implements IUserDao {
     @Override
     public User getById(Integer id) {
-        User user = new User();
-        Connection conn = null;
-        PreparedStatement pst = null;
-        ResultSet rs = null;
-
-        try {
-            conn = JDBCUtils.getConnection();
+//        Connection conn = null;
+//        PreparedStatement pst = null;
+//        ResultSet rs = null;
+//
+//        try {
+//            conn = JDBCUtils.getConnection();
+//            String sql = "select * from user where id = ?";
+//            pst = conn.prepareStatement(sql);
+//
+//            pst.setInt(1,id);
+//
+//            rs = pst.executeQuery();
+//
+//            while (rs.next()){
+//                user.setId(rs.getInt(1));
+//                user.setUsername(rs.getString(2));
+//                user.setPassword(rs.getString(3));
+//                String status = rs.getString(4);
+//
+//                StatusEnum statusEnum = Enum.valueOf(StatusEnum.class,status);
+//                user.setStatus(statusEnum);
+//                user.setRegisterTime(new Date(rs.getTimestamp(5).getTime()));
+//            }
+//
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//        }finally {
+//            JDBCUtils.CloseResourse(conn,pst,rs);
+//        }
+        return JdbcTamplate.executeDQL(conn -> {
             String sql = "select * from user where id = ?";
-            pst = conn.prepareStatement(sql);
-
+            PreparedStatement pst = conn.prepareStatement(sql);
             pst.setInt(1,id);
 
-            rs = pst.executeQuery();
-
-            while (rs.next()){
+            return pst;
+        },rs -> {
+            User user = new User();
+            if (rs.next()){
                 user.setId(rs.getInt(1));
                 user.setUsername(rs.getString(2));
                 user.setPassword(rs.getString(3));
@@ -46,21 +71,37 @@ public class UserDaoImpl implements IUserDao {
                 StatusEnum statusEnum = Enum.valueOf(StatusEnum.class,status);
                 user.setStatus(statusEnum);
                 user.setRegisterTime(new Date(rs.getTimestamp(5).getTime()));
+
             }
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }finally {
-            JDBCUtils.CloseResourse(conn,pst,rs);
-        }
-
-
-        return user;
+            return user;
+        });
     }
 
     @Override
     public List<User> findAll() {
-        return null;
+        return JdbcTamplate.executeMore(conn -> {
+
+            String sql = "select * from user";
+            PreparedStatement pst = conn.prepareStatement(sql);
+
+            return pst;
+        },rs -> {
+            List<User> users = new ArrayList<>();
+            while (rs.next()){
+                User user = new User();
+                user.setId(rs.getInt(1));
+                user.setUsername(rs.getString(2));
+                user.setPassword(rs.getString(3));
+                String status = rs.getString(4);
+
+                StatusEnum statusEnum = Enum.valueOf(StatusEnum.class,status);
+                user.setStatus(statusEnum);
+                user.setRegisterTime(new Date(rs.getTimestamp(5).getTime()));
+
+                users.add(user);
+            }
+            return users;
+        });
     }
 
     @Override
