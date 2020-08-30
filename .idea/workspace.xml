@@ -2,15 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="97c45cd2-70be-499e-a773-217b492a4bb0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/study/wqh/jdbc/util/ConfigUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/study/wqh/jdbc/util/config.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/study/wqh/jdbc/util/template/IPreparedStatementCallback.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/study/wqh/jdbc/util/template/JdbcTamplate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/study/wqh/jdbc/day04/dao/IUserDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/study/wqh/jdbc/day04/dao/Impl/UserDaoImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/study/wqh/jdbc/day04/entity/StatusEnum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/study/wqh/jdbc/day04/entity/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/JdbcTest/UserDaoTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/study/wqh/jdbc/day04/dao/IArticleDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/study/wqh/jdbc/day04/dao/IArticleDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/study/wqh/jdbc/day04/dao/Impl/ArticleDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/study/wqh/jdbc/day04/dao/Impl/ArticleDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/study/wqh/jdbc/util/JDBCUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/study/wqh/jdbc/util/JDBCUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/JdbcTest/ArticleDaoImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/JdbcTest/ArticleDaoImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/study/wqh/jdbc/util/template/JdbcTamplate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/study/wqh/jdbc/util/template/JdbcTamplate.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,28 +18,45 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="MySQL" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="MySQL" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="MySQL" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="test: schema" type="76f4a085:MysqlImplModel$Schema" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/study/wqh/jdbc/day04/dao/IArticleDao.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="35" column="32" selection-start-line="35" selection-start-column="32" selection-end-line="35" selection-end-column="32" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/study/wqh/jdbc/day04/dao/Impl/ArticleDaoImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="222" column="12" selection-start-line="222" selection-start-column="12" selection-end-line="222" selection-end-column="12" />
+            <state relative-caret-position="4708">
+              <caret line="227" column="18" selection-start-line="227" selection-start-column="18" selection-end-line="227" selection-end-column="18" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#397#421#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -49,8 +65,86 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/study/wqh/jdbc/util/template/JdbcTamplate.java">
           <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="858">
+              <caret line="44" column="11" selection-start-line="44" selection-start-column="11" selection-end-line="44" selection-end-column="11" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/study/wqh/jdbc/day04/entity/User.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="968">
+              <caret line="82" column="18" selection-start-line="82" selection-start-column="18" selection-end-line="82" selection-end-column="18" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#712#713#0" expanded="true" />
+                <element signature="e#737#738#0" expanded="true" />
+                <element signature="e#774#775#0" expanded="true" />
+                <element signature="e#802#803#0" expanded="true" />
+                <element signature="e#837#838#0" expanded="true" />
+                <element signature="e#868#869#0" expanded="true" />
+                <element signature="e#916#917#0" expanded="true" />
+                <element signature="e#956#957#0" expanded="true" />
+                <element signature="e#991#992#0" expanded="true" />
+                <element signature="e#1022#1023#0" expanded="true" />
+                <element signature="e#1070#1071#0" expanded="true" />
+                <element signature="e#1110#1111#0" expanded="true" />
+                <element signature="e#1147#1148#0" expanded="true" />
+                <element signature="e#1176#1177#0" expanded="true" />
+                <element signature="e#1224#1225#0" expanded="true" />
+                <element signature="e#1260#1261#0" expanded="true" />
+                <element signature="e#1547#1548#0" expanded="true" />
+                <element signature="e#1595#1596#0" expanded="true" />
+                <element signature="e#1632#1633#0" expanded="true" />
+                <element signature="e#1667#1668#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/study/wqh/jdbc/day04/entity/StatusEnum.java">
+          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="286">
-              <caret line="29" column="39" lean-forward="true" selection-start-line="29" selection-start-column="39" selection-end-line="29" selection-end-column="39" />
+              <caret line="13" column="7" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/study/wqh/jdbc/day04/dao/IUserDao.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="442">
+              <caret line="43" column="12" selection-start-line="43" selection-start-column="12" selection-end-line="43" selection-end-column="12" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/study/wqh/jdbc/day04/dao/Impl/UserDaoImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="924">
+              <caret line="51" column="32" lean-forward="true" selection-start-line="51" selection-start-column="32" selection-end-line="51" selection-end-column="32" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1708#1709#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/study/wqh/jdbc/util/JDBCUtils.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-330">
+              <caret line="24" selection-start-line="24" selection-end-line="24" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -59,9 +153,21 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test/JdbcTest/UserDaoTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="264">
+              <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/study/wqh/jdbc/util/template/IPreparedStatementCallback.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
+            <state relative-caret-position="154">
               <caret line="9" column="21" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -73,12 +179,12 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/JdbcTest/ArticleDaoImplTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="443">
-              <caret line="49" column="23" lean-forward="true" selection-start-line="49" selection-start-column="16" selection-end-line="49" selection-end-column="30" />
+            <state relative-caret-position="968">
+              <caret line="49" column="23" selection-start-line="49" selection-start-column="16" selection-end-line="49" selection-end-column="30" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1132#1133#0" expanded="true" />
-                <element signature="e#1157#1158#0" expanded="true" />
+                <element signature="e#1128#1129#0" expanded="true" />
+                <element signature="e#1168#1169#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -90,8 +196,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -116,10 +222,15 @@
         <option value="$PROJECT_DIR$/src/com/study/wqh/jdbc/util/JDBCUtils.java" />
         <option value="$PROJECT_DIR$/src/com/study/wqh/jdbc/day04/dao/IArticleDao.java" />
         <option value="$PROJECT_DIR$/src/com/study/wqh/jdbc/util/template/IPreparedStatementCallbcak.java" />
-        <option value="$PROJECT_DIR$/src/com/study/wqh/jdbc/util/template/JdbcTamplate.java" />
-        <option value="$PROJECT_DIR$/src/com/study/wqh/jdbc/day04/dao/Impl/ArticleDaoImpl.java" />
         <option value="$PROJECT_DIR$/test/JdbcTest/ArticleDaoImplTest.java" />
         <option value="$PROJECT_DIR$/src/com/study/wqh/jdbc/util/template/IPreparedStatementCallback.java" />
+        <option value="$PROJECT_DIR$/src/com/study/wqh/jdbc/day04/dao/Impl/ArticleDaoImpl.java" />
+        <option value="$PROJECT_DIR$/src/com/study/wqh/jdbc/util/template/JdbcTamplate.java" />
+        <option value="$PROJECT_DIR$/src/com/study/wqh/jdbc/day04/dao/IUserDao.java" />
+        <option value="$PROJECT_DIR$/src/com/study/wqh/jdbc/day04/entity/User.java" />
+        <option value="$PROJECT_DIR$/src/com/study/wqh/jdbc/day04/entity/StatusEnum.java" />
+        <option value="$PROJECT_DIR$/test/JdbcTest/UserDaoTest.java" />
+        <option value="$PROJECT_DIR$/src/com/study/wqh/jdbc/day04/dao/Impl/UserDaoImpl.java" />
       </list>
     </option>
   </component>
@@ -137,8 +248,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -162,7 +273,39 @@
               <item name="JDBC" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="jdbc" type="462c0819:PsiDirectoryNode" />
-              <item name="day02" type="462c0819:PsiDirectoryNode" />
+              <item name="day03" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JDBC" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JDBC" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="jdbc" type="462c0819:PsiDirectoryNode" />
+              <item name="day04" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JDBC" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JDBC" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="jdbc" type="462c0819:PsiDirectoryNode" />
+              <item name="day04" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JDBC" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JDBC" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="jdbc" type="462c0819:PsiDirectoryNode" />
+              <item name="day04" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+              <item name="Impl" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JDBC" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JDBC" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="jdbc" type="462c0819:PsiDirectoryNode" />
+              <item name="day04" type="462c0819:PsiDirectoryNode" />
+              <item name="entity" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="JDBC" type="b2602c69:ProjectViewProjectNode" />
@@ -174,10 +317,13 @@
             <path>
               <item name="JDBC" type="b2602c69:ProjectViewProjectNode" />
               <item name="JDBC" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="jdbc" type="462c0819:PsiDirectoryNode" />
-              <item name="util" type="462c0819:PsiDirectoryNode" />
-              <item name="template" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JDBC" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JDBC" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="JdbcTest" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -186,22 +332,27 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1598431230602" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1598778440469" />
     <property name="last_opened_file_path" value="E:/SHOPPING/ACGN-Shop/pom.xml" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.study.wqh.jdbc.day04.entity" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\StudyByMyself\JDBC\src" />
       <recent name="E:\StudyByMyself\JDBC\src\com\study\wqh\jdbc\day01" />
@@ -219,7 +370,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.ArticleDaoImplTest.TestRemoveById">
+  <component name="RunManager" selected="JUnit.UserDaoTest.TestUpdate">
     <configuration name="ConfigUtil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.study.wqh.jdbc.util.ConfigUtil" />
       <module name="JDBC" />
@@ -281,7 +432,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ArticleDaoImplTest.TestSave" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="UserDaoTest.TestUpdate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="JDBC" />
       <extension name="coverage">
         <pattern>
@@ -290,8 +441,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="JdbcTest" />
-      <option name="MAIN_CLASS_NAME" value="JdbcTest.ArticleDaoImplTest" />
-      <option name="METHOD_NAME" value="TestSave" />
+      <option name="MAIN_CLASS_NAME" value="JdbcTest.UserDaoTest" />
+      <option name="METHOD_NAME" value="TestUpdate" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -299,11 +450,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.UserDaoTest.TestUpdate" />
         <item itemvalue="JUnit.ArticleDaoImplTest.TestRemoveById" />
         <item itemvalue="JUnit.ArticleDaoImplTest.TestDelById" />
         <item itemvalue="JUnit.ArticleDaoImplTest.TestGetByID" />
         <item itemvalue="Application.ConfigUtil" />
-        <item itemvalue="JUnit.ArticleDaoImplTest.TestSave" />
       </list>
     </recent_temporary>
   </component>
@@ -322,23 +473,19 @@
       <workItem from="1597671874432" duration="5377000" />
       <workItem from="1597754721407" duration="1623000" />
       <workItem from="1598351397934" duration="2759000" />
-      <workItem from="1598412142000" duration="10925000" />
+      <workItem from="1598412142000" duration="11737000" />
+      <workItem from="1598534035458" duration="880000" />
+      <workItem from="1598534999362" duration="873000" />
+      <workItem from="1598536296321" duration="1528000" />
+      <workItem from="1598537863626" duration="268000" />
+      <workItem from="1598573819953" duration="140000" />
+      <workItem from="1598574004839" duration="201000" />
+      <workItem from="1598593688464" duration="2082000" />
+      <workItem from="1598664100742" duration="5454000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="ArticleDaoImplTest_finaAll - 2020.08.26 at 14h 03m 45s.xml">
-      <configuration name="ArticleDaoImplTest.finaAll" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ArticleDaoImplTest_finaAll - 2020.08.26 at 14h 04m 34s.xml">
-      <configuration name="ArticleDaoImplTest.finaAll" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ArticleDaoImplTest_finaAll - 2020.08.26 at 14h 05m 38s.xml">
-      <configuration name="ArticleDaoImplTest.finaAll" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ArticleDaoImplTest_TestSave - 2020.08.26 at 14h 43m 22s.xml">
-      <configuration name="ArticleDaoImplTest.TestSave" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="ArticleDaoImplTest_TestSave - 2020.08.26 at 14h 45m 46s.xml">
       <configuration name="ArticleDaoImplTest.TestSave" configurationId="JUnit" />
     </history-entry>
@@ -357,15 +504,27 @@
     <history-entry file="ArticleDaoImplTest_TestRemoveById - 2020.08.26 at 16h 40m 06s.xml">
       <configuration name="ArticleDaoImplTest.TestRemoveById" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="UserDaoTest_TestUpdate - 2020.08.30 at 16h 22m 38s.xml">
+      <configuration name="UserDaoTest.TestUpdate" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UserDaoTest_TestUpdate - 2020.08.30 at 16h 22m 56s.xml">
+      <configuration name="UserDaoTest.TestUpdate" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UserDaoTest_TestUpdate - 2020.08.30 at 16h 48m 18s.xml">
+      <configuration name="UserDaoTest.TestUpdate" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UserDaoTest_TestUpdate - 2020.08.30 at 16h 48m 50s.xml">
+      <configuration name="UserDaoTest.TestUpdate" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26588000" />
+    <option name="totallyTimeSpent" value="38826000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1748401" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17004265" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -374,7 +533,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32850778" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32850778" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39933258" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -385,15 +544,18 @@
       <window_info anchor="bottom" id="Terminal" order="10" weight="0.32962137" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="12" />
+      <window_info anchor="bottom" id="Flutter Performance" order="13" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Database" order="4" />
+      <window_info anchor="right" id="Database" order="4" weight="0.32995737" />
       <window_info anchor="right" id="Theme Preview" order="5" />
       <window_info anchor="right" id="Maven" order="6" />
       <window_info anchor="right" id="Capture Analysis" order="7" />
       <window_info anchor="right" id="Palette&#9;" order="8" />
+      <window_info anchor="right" id="Flutter Inspector" order="9" />
+      <window_info anchor="right" id="Flutter Outline" order="10" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -521,20 +683,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/study/wqh/jdbc/util/JDBCUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-132">
-          <caret line="24" selection-start-line="24" selection-end-line="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#249#273#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/study/wqh/jdbc/day04/dao/IArticleDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
+        <state>
           <caret line="35" column="32" selection-start-line="35" selection-start-column="32" selection-end-line="35" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -544,19 +695,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/study/wqh/jdbc/day04/dao/Impl/ArticleDaoImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="222" column="12" selection-start-line="222" selection-start-column="12" selection-end-line="222" selection-end-column="12" />
+        <state relative-caret-position="4708">
+          <caret line="227" column="18" selection-start-line="227" selection-start-column="18" selection-end-line="227" selection-end-column="18" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#397#421#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/study/wqh/jdbc/util/template/JdbcTamplate.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="29" column="39" lean-forward="true" selection-start-line="29" selection-start-column="39" selection-end-line="29" selection-end-column="39" />
+        <state relative-caret-position="858">
+          <caret line="44" column="11" selection-start-line="44" selection-start-column="11" selection-end-line="44" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/study/wqh/jdbc/util/template/IPreparedStatementCallback.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="9" column="21" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -565,20 +725,91 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test/JdbcTest/ArticleDaoImplTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="443">
-          <caret line="49" column="23" lean-forward="true" selection-start-line="49" selection-start-column="16" selection-end-line="49" selection-end-column="30" />
+        <state relative-caret-position="968">
+          <caret line="49" column="23" selection-start-line="49" selection-start-column="16" selection-end-line="49" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1132#1133#0" expanded="true" />
-            <element signature="e#1157#1158#0" expanded="true" />
+            <element signature="e#1128#1129#0" expanded="true" />
+            <element signature="e#1168#1169#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/study/wqh/jdbc/util/template/IPreparedStatementCallback.java">
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/e88b25a1-d2df-4517-a468-823d164d25ef/console.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/study/wqh/jdbc/day04/dao/IUserDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="9" column="21" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
+        <state relative-caret-position="442">
+          <caret line="43" column="12" selection-start-line="43" selection-start-column="12" selection-end-line="43" selection-end-column="12" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/study/wqh/jdbc/day04/entity/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="968">
+          <caret line="82" column="18" selection-start-line="82" selection-start-column="18" selection-end-line="82" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#712#713#0" expanded="true" />
+            <element signature="e#737#738#0" expanded="true" />
+            <element signature="e#774#775#0" expanded="true" />
+            <element signature="e#802#803#0" expanded="true" />
+            <element signature="e#837#838#0" expanded="true" />
+            <element signature="e#868#869#0" expanded="true" />
+            <element signature="e#916#917#0" expanded="true" />
+            <element signature="e#956#957#0" expanded="true" />
+            <element signature="e#991#992#0" expanded="true" />
+            <element signature="e#1022#1023#0" expanded="true" />
+            <element signature="e#1070#1071#0" expanded="true" />
+            <element signature="e#1110#1111#0" expanded="true" />
+            <element signature="e#1147#1148#0" expanded="true" />
+            <element signature="e#1176#1177#0" expanded="true" />
+            <element signature="e#1224#1225#0" expanded="true" />
+            <element signature="e#1260#1261#0" expanded="true" />
+            <element signature="e#1547#1548#0" expanded="true" />
+            <element signature="e#1595#1596#0" expanded="true" />
+            <element signature="e#1632#1633#0" expanded="true" />
+            <element signature="e#1667#1668#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/study/wqh/jdbc/day04/entity/StatusEnum.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="13" column="7" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/study/wqh/jdbc/util/JDBCUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-330">
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/study/wqh/jdbc/day04/dao/Impl/UserDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="924">
+          <caret line="51" column="32" lean-forward="true" selection-start-line="51" selection-start-column="32" selection-end-line="51" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1708#1709#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/JdbcTest/UserDaoTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

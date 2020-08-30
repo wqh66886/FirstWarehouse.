@@ -207,6 +207,7 @@ public class ArticleDaoImpl implements IArticleDao {
 
     @Override
     public void removeById(Integer id) {
+        //匿名内部类
 //        JdbcTamplate.executeDML(new IPreparedStatementCallback() {
 //            @Override
 //            public PreparedStatement executeSQL(Connection conn) throws SQLException {
@@ -216,11 +217,15 @@ public class ArticleDaoImpl implements IArticleDao {
 //                return pst;
 //            }
 //        });
-        JdbcTamplate.executeDML(conn -> {
-            String sql = "delete from article where id = ?";
-            PreparedStatement pst = conn.prepareStatement(sql);
-            pst.setInt(1,id);
-            return pst;
-        });
+        //lambta表达式
+//        JdbcTamplate.executeDML(conn -> {
+//            String sql = "delete from article where id = ?";
+//            PreparedStatement pst = conn.prepareStatement(sql);
+//            pst.setInt(1,id);
+//            return pst;
+//        });
+
+        //利用反射进行删除
+        JdbcTamplate.delete(Article.class,"id",7);
     }
 }
