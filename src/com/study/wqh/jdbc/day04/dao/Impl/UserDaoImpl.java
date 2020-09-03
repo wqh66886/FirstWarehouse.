@@ -3,13 +3,9 @@ package com.study.wqh.jdbc.day04.dao.Impl;
 import com.study.wqh.jdbc.day04.dao.IUserDao;
 import com.study.wqh.jdbc.day04.entity.StatusEnum;
 import com.study.wqh.jdbc.day04.entity.User;
-import com.study.wqh.jdbc.util.JDBCUtils;
 import com.study.wqh.jdbc.util.template.JdbcTamplate;
 
-import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -127,5 +123,49 @@ public class UserDaoImpl implements IUserDao {
     @Override
     public void save(User user) {
 
+    }
+
+    @Override
+    public List<User> pageQuery(Integer pageNow, Integer pageSize, String username) {
+        return JdbcTamplate.executeMore(conn -> {
+            String sql = "select * from user where username like ? limit ?,?";
+            PreparedStatement pst = conn.prepareStatement(sql);
+            pst.setString(1,"%"+username+"%");
+            pst.setInt(2,(pageNow-1)*pageSize);
+            pst.setInt(3,pageSize);
+            return pst;
+        },rs -> {
+            List<User> users = new ArrayList<>();
+            while (rs.next()){
+                User user = new User();
+                user.setId(rs.getInt(1));
+                user.setUsername(rs.getString(2));
+                user.setPassword(rs.getString(3));
+                String status = rs.getString(4);
+
+                StatusEnum statusEnum = Enum.valueOf(StatusEnum.class,status);
+                user.setStatus(statusEnum);
+                user.setRegisterTime(new Date(rs.getTimestamp(5).getTime()));
+
+                users.add(user);
+            }
+            return users;
+        });
+    }
+
+    @Override
+    public int getRows(String username) {
+        return JdbcTamplate.executeDQL(conn -> {
+            String sql = "select count(*) from user where username like ?";
+            PreparedStatement pst = conn.prepareStatement(sql);
+            pst.setString(1,"%"+username+"%");
+            return pst;
+        },rs -> {
+            int count = 0;
+            if(rs.next()){
+                count = rs.getInt(1);
+            }
+            return count;
+        });
     }
 }

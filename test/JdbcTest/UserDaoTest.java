@@ -46,4 +46,10 @@ public class UserDaoTest {
         List<User> users = userDao.findAll();
         users.forEach(e-> System.out.println(e));
     }
+
+    @Test
+    public void testPageQuery(){
+        List<User> users = userDao.pageQuery(1,2,"");
+        users.forEach(e-> System.out.println(e));
+    }
 }

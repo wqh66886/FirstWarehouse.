@@ -45,5 +45,10 @@ public interface IUserDao {
      * @param user
      */
     void save(User user);
+
+    List<User> pageQuery(Integer pageNow,Integer pageSize,String username);
+
+
+    int getRows(String username);
 }
 
