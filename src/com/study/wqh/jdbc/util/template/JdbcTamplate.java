@@ -1,6 +1,7 @@
 package com.study.wqh.jdbc.util.template;
 
 import com.study.wqh.jdbc.util.JDBCUtils;
+import com.study.wqh.jdbc.util.pools.MyDataSourceUtil;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -114,8 +115,9 @@ public class JdbcTamplate {
         List<T> obj = null;
         //1.获取连接
         try {
-            conn = JDBCUtils.getConnection();
-
+            //conn = JDBCUtils.getConnection();
+            //使用连接池来创建连接
+            conn = MyDataSourceUtil.getConnection();
             //发送参数
             pst = pcb.executeSQL(conn);
 
